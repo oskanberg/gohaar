@@ -7,7 +7,7 @@ import (
 
 // Transform takes the Haar wavelet transform on f
 // It returns the result in two slices:
-// the approximation coefficients, and the detail coefficients
+// the approximation coefficients, and the detail coefficients.
 func Transform(f []float64) ([]float64, []float64) {
 	nl := len(f) / 2
 	app := make([]float64, nl)
@@ -24,8 +24,8 @@ func Transform(f []float64) ([]float64, []float64) {
 }
 
 // ConverseTransform takes a slice of approximation coefficients, and
-// a slice of detail coefficients reconstructs the original signal
-// It will return an error if the two supplied slices are not equal in length
+// a slice of detail coefficients reconstructs the original signal.
+// It will return an error if the two supplied slices are not equal in length.
 func ConverseTransform(app []float64, det []float64) ([]float64, error) {
 	l := len(app)
 	if len(det) != l {
